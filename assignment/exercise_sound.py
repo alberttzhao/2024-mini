@@ -17,7 +17,7 @@ speaker = machine.PWM(machine.Pin(SPEAKER_PIN))
 
 def playtone(frequency: float, duration: float) -> None:
     speaker.duty_u16(1000)
-    speaker.freq(frequency)
+    speaker.freq(int(frequency))
     utime.sleep(duration)
 
 
