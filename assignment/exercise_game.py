@@ -8,7 +8,7 @@ import random
 import json
 
 
-N: int = 3
+N: int = 10 # setting this to 10 flashes so it matches with the exercise requirement
 sample_ms = 10.0
 on_ms = 500
 
@@ -51,13 +51,35 @@ def scorer(t: list[int | None]) -> None:
     print(f"You missed the light {misses} / {len(t)} times")
 
     t_good = [x for x in t if x is not None]
-
-    print(t_good)
+    
+    #Added by Albert for exercise 3:
+    if t_good:
+        min_time = min(t_good)
+        max_time = max(t_good)
+        avg_time = sum(t_good) / len(t_good)
+        
+        print(f"Minimum response time: {min_time} ms")
+        print(f"Maximum response time: {max_time} ms")
+        print(f"Average response time: {avg_time:.2f} ms")
+    else:
+        min_time = max_time = avg_time = None
+        print("No valid responses to calculate times")
+    
 
     # add key, value to this dict to store the minimum, maximum, average response time
     # and score (non-misses / total flashes) i.e. the score a floating point number
     # is in range [0..1]
-    data = {}
+    
+    score = (len(t_good) / len(t)) if len(t) > 0 else 0.0
+    
+    # Prepare data for JSON
+    data = {
+        "misses": misses,
+        "min_response_time": min_time,
+        "max_response_time": max_time,
+        "avg_response_time": avg_time,
+        "score": score,
+    }
 
     # %% make dynamic filename and write JSON
 
