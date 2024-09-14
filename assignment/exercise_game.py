@@ -6,16 +6,39 @@ from machine import Pin
 import time
 import random
 import json
+import requests
+import network
+from time import sleep
+
+
+ssid = "BU Guest (unencrypted)"
 
 
 N: int = 10 # setting this to 10 flashes so it matches with the exercise requirement
 sample_ms = 10.0
 on_ms = 500
 
+def encode_email_for_url(email):
+    # Replace common special characters with their URL-encoded equivalents
+    return email.replace("@", "-at-").replace(".", "-dot-")
+
+def connect():
+    #Connect to WLAN
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    
+    wlan.connect(ssid)
+    while wlan.isconnected() == False:
+        print('Waiting for connection...')
+        sleep(1)
+    print(wlan.ifconfig())
+    
+    print("Connected")
 
 def random_time_interval(tmin: float, tmax: float) -> float:
     """return a random time interval between max and min"""
     return random.uniform(tmin, tmax)
+
 
 
 def blinker(N: int, led: Pin) -> None:
@@ -26,6 +49,7 @@ def blinker(N: int, led: Pin) -> None:
         time.sleep(0.1)
         led.low()
         time.sleep(0.1)
+        
 
 
 def write_json(json_filename: str, data: dict) -> None:
@@ -44,6 +68,13 @@ def write_json(json_filename: str, data: dict) -> None:
     with open(json_filename, "w") as f:
         json.dump(data, f)
 
+def send_json(username: str,data: dict) -> None:
+    
+    name = encode_email_for_url(username)
+ 
+    database_url = f"https://bu-ec463-default-rtdb.firebaseio.com/{name}.json?auth=W8n0ypLxs9OC3dAZAugyQKekuLheuYnJzR0NrVme"
+    
+    requests.post(database_url, json=data)
 
 def scorer(t: list[int | None]) -> None:
     # %% collate results
@@ -91,6 +122,11 @@ def scorer(t: list[int | None]) -> None:
     print("write", filename)
 
     write_json(filename, data)
+    
+    #get user input
+    username = input("Enter your email: ")
+    
+    send_json(username, data)
 
 
 if __name__ == "__main__":
@@ -120,5 +156,7 @@ if __name__ == "__main__":
         led.low()
 
     blinker(5, led)
+    
+    connect()
 
     scorer(t)
