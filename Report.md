@@ -1,42 +1,99 @@
-**Exercise 1:**
+# Mini-Project Overview
 
-The max_bright value was 55,000 and the min_bright was 37,000.
+This mini-project demonstrates how to set up and use a simple web application that allows users to enter an email address, check whether data associated with that email exists in a Firebase Realtime Database, and display the information in a formatted table. If no data is found, an appropriate error message is displayed. The project uses **React** for the front-end and **Firebase Realtime Database** for the back-end.
 
-**Exercise 2:**
+## Exercise 1
 
-Updated exercise_sound.py to play twinkle twinkle little star
+- The `max_bright` value was **55,000**, and the `min_bright` value was **37,000**.
 
-**Exercise 3:**
+## Exercise 2
 
-Some of the changes we made to exercise_game.py include adding a scoring function, connecting the Pi Pico to the internet, and finally posting the json file to a firestone data base. Focusing in on the aspect that uploads the json to the cloud server, we first needed to connect the Pi Pico to the internet. We did this by using the network library and conncet8ing to BU Guest. From there we uploaded the json to teh firestone realtime database by http. We took the users email that they entered on the Thonny terminal and stored it in a folder. From there they could acess this folder using a web app we developed.
+- Updated `exercise_sound.py` to play *Twinkle Twinkle Little Star*.
 
-Below is a detailed description of how our mini-project works:
-We set up a simple web application that allows users to enter an email address, checks whether data related to that email exists in a Firebase Real-time database, and if found, displays the associated information in a table format. If the email doesn’t exist, an appropriate error message is displayed. The project is built using React (for the front-end) and Firebase Realtime Database (for the back-end).
+## Exercise 3
 
-Front-End Setup(React):
-- Email Input Form:
-  • The user interface includes an input field where users can enter an email address in a normal format (e.g., user@domain.com).
-	•	The form submission triggers a function that converts the email into a format compatible with the Firebase database (e.g., user-at-domain-dot-com) and fetches data for that email from the Firebase Realtime Database.
-- Data Display Table:
-  • If data exists for the given email, it is formatted and displayed in a clean table with specific columns: ID, Avg Response Time, Max Response Time, Min Response Time, Misses, and Score.
-  •	If no data exists, a message is displayed to inform the user that no information is available for the given email.
+### Changes to `exercise_game.py`:
 
-React Components and Hooks:
-  •	useState: Used to manage the component’s state, specifically to store the user’s input email, the fetched data, and any error messages.
-  •	useEffect: Although not extensively used in this particular setup, useEffect can be used when side effects (such as data fetching or other asynchronous operations) need to be triggered on component render.
+- **Scoring Function**: Added a scoring mechanism.
+- **Internet Connectivity**: Connected the Pi Pico to the internet using the `network` library and connected to the **BU Guest** network.
+- **Cloud Upload**: We posted a JSON file to a Firestore Realtime Database using HTTP.
 
-We also used HTML and CSS for website and data table styling 
+### Uploading JSON to the Cloud:
 
-React Components and Hooks:
-- Firebase Project Configuration
-	•	A Firebase project is set up through the Firebase Console, where the database is configured to store and retrieve data.
-	•	The Firebase SDK is added to the React project via the firebase NPM package. The necessary Firebase libraries, such as firebase/app and firebase/database, are imported to handle database connections.
-- Firebase Configuration in firebase.js:
-	•	A firebase.js file is created in the React project to handle Firebase configuration and initialization.
-	•	This file imports the Firebase app and database, initializes the Firebase app with configuration details (like apiKey, authDomain, and databaseURL), and exports a database object that allows interaction with the Realtime Database.
+- The user enters their email via the Thonny terminal, which is then stored in a designated folder.
+- This folder is accessible through a web app we developed, allowing users to view their data.
 
-Steps:
-- User enter email address
-- Email conversation
-- Firebase Query
-- Data display
+---
+
+## Detailed Description of the Mini-Project
+
+We set up a simple web application that allows users to enter an email address, checks whether data related to that email exists in a Firebase Realtime Database, and if found, displays the associated information in a table format. If the email doesn’t exist, an appropriate error message is displayed.
+
+The project consists of the following main components:
+
+### Front-End Setup (React)
+
+#### Email Input Form:
+
+- The user interface includes an input field where users can enter an email address in a normal format (e.g., `user@domain.com`).
+- When the form is submitted, a function converts the email into a format compatible with Firebase (e.g., `user-at-domain-dot-com`) and fetches the data associated with that email from the Firebase Realtime Database.
+
+#### Data Display Table:
+
+- If data exists for the given email, it is formatted and displayed in a clean table with specific columns: **ID**, **Avg Response Time**, **Max Response Time**, **Min Response Time**, **Misses**, and **Score**.
+- If no data exists, a message is displayed to inform the user that no information is available for the given email.
+
+### React Components and Hooks
+
+- **useState**: Manages the component’s state, specifically to store the user’s input email, the fetched data, and any error messages.
+- **useEffect**: Can be used for side effects like fetching data when the component renders, though it isn't heavily used in this setup.
+
+We also used **HTML** and **CSS** for basic website and data table styling.
+
+---
+
+### Firebase Configuration
+
+#### Firebase Project Configuration:
+
+- A Firebase project is set up through the **Firebase Console**, where the database is configured to store and retrieve data.
+- The Firebase SDK is added to the React project via the `firebase` NPM package. Firebase libraries such as `firebase/app` and `firebase/database` are imported to handle database connections.
+
+#### Firebase Configuration in `firebase.js`:
+
+- A `firebase.js` file is created in the React project to handle Firebase configuration and initialization.
+- This file imports the Firebase app and database, initializes Firebase with configuration details like `apiKey`, `authDomain`, and `databaseURL`, and exports a `database` object that allows interaction with the Realtime Database.
+
+---
+
+## Application Workflow
+
+1. **User Enters Email Address**:
+   - The user enters an email address in the normal format (e.g., `user@domain.com`).
+
+2. **Email Conversion**:
+   - The email is automatically converted into a Firebase-friendly format (e.g., `user-at-domain-dot-com`).
+
+3. **Firebase Query**:
+   - The app queries Firebase to check if data for that email exists. If found, the data is fetched.
+
+4. **Data Display**:
+   - If data exists for the email, it is displayed in a neatly formatted table.
+   - If no data exists, an error message is displayed to the user.
+
+---
+
+## Technologies Used
+
+- **React**: For building the user interface and handling user input.
+- **Firebase Realtime Database**: For storing and retrieving data in the cloud.
+- **HTML/CSS**: For basic page structure and styling.
+
+---
+
+## How to Run the Project
+
+1. Clone this repository.
+2. Install the necessary dependencies by running:
+   ```bash
+   npm install
