@@ -2,6 +2,9 @@
 
 - The `max_bright` value was **55,000**, and the `min_bright` value was **37,000**.
 
+### Video Demonstration for Exercise 1
+https://drive.google.com/file/d/1TvqQQNbrhFtzL0tYCda_OWfgVonH83_U/view?usp=sharing
+
 ## Exercise 2
 
 - Updated `exercise_sound.py` to play *Twinkle Twinkle Little Star*.
@@ -82,3 +85,8 @@ We also used **HTML** and **CSS** for basic website and data table styling.
 
 ## Video Demonstration for Exercise 3: 
 https://drive.google.com/file/d/1t3JdingRDVrQpwIBm4OE83Xl-CdZwXPi/view?usp=sharing
+
+# Extra Credit - Github Action:
+We created a label github action to automatically label pull requests based on the files modified in the PR. The action is configured using a .github/labeler.yml file, which defines label rules based on file paths. When a pull request is opened or updated, the action checks the paths of the modified files and applies the appropriate labels.
+
+This automation helps streamline the review process by tagging PRs based on the areas of the project they affect, making it easier for collaborators to identify relevant changes.
