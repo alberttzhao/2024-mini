@@ -6,6 +6,9 @@
 
 - Updated `exercise_sound.py` to play *Twinkle Twinkle Little Star*.
 
+### Vidoo Demonstration for Exercise 2 (p.s. You should hear twinkle twinkle little start coming out from the speaker) 
+https://drive.google.com/file/d/1p7vyHM4lEXCDc8fgKQZN7IMu9wEuED1-/view?usp=sharing
+
 # Exercise 3
 
 ## Mini-Project Overview
@@ -77,4 +80,5 @@ We also used **HTML** and **CSS** for basic website and data table styling.
 4. **Data Display**:
 ---
 
-## Video Demonstration: 
+## Video Demonstration for Exercise 3: 
+https://drive.google.com/file/d/1t3JdingRDVrQpwIBm4OE83Xl-CdZwXPi/view?usp=sharing
