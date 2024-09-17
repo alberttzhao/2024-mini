@@ -1,7 +1,3 @@
-# Mini-Project Overview
-
-This mini-project demonstrates how to set up and use a simple web application that allows users to enter an email address, check whether data associated with that email exists in a Firebase Realtime Database, and display the information in a formatted table. If no data is found, an appropriate error message is displayed. The project uses **React** for the front-end and **Firebase Realtime Database** for the back-end.
-
 ## Exercise 1
 
 - The `max_bright` value was **55,000**, and the `min_bright` value was **37,000**.
@@ -10,7 +6,11 @@ This mini-project demonstrates how to set up and use a simple web application th
 
 - Updated `exercise_sound.py` to play *Twinkle Twinkle Little Star*.
 
-## Exercise 3
+# Exercise 3
+
+## Mini-Project Overview
+
+This mini-project demonstrates how to set up and use a simple web application that allows users to enter an email address, check whether data associated with that email exists in a Firebase Realtime Database, and display the information in a formatted table. If no data is found, an appropriate error message is displayed. The project uses **React** for the front-end and **Firebase Realtime Database** for the back-end.
 
 ### Changes to `exercise_game.py`:
 
