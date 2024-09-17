@@ -68,13 +68,13 @@ def write_json(json_filename: str, data: dict) -> None:
     with open(json_filename, "w") as f:
         json.dump(data, f)
 
-def send_json(username: str,data: dict) -> None:
+def send_json(username: str,data: dict, json_filename: str) -> None:
     
     name = encode_email_for_url(username)
  
-    database_url = f"https://bu-ec463-default-rtdb.firebaseio.com/{name}.json?auth=W8n0ypLxs9OC3dAZAugyQKekuLheuYnJzR0NrVme"
+    database_url = f"https://bu-ec463-default-rtdb.firebaseio.com/{name}/{json_filename}?auth=W8n0ypLxs9OC3dAZAugyQKekuLheuYnJzR0NrVme"
     
-    requests.post(database_url, json=data)
+    requests.put(database_url, json=data)
 
 def scorer(t: list[int | None]) -> None:
     # %% collate results
@@ -126,7 +126,7 @@ def scorer(t: list[int | None]) -> None:
     #get user input
     username = input("Enter your email: ")
     
-    send_json(username, data)
+    send_json(username, data, filename)
 
 
 if __name__ == "__main__":
