@@ -69,31 +69,9 @@ We also used **HTML** and **CSS** for basic website and data table styling.
 ## Application Workflow
 
 1. **User Enters Email Address**:
-   - The user enters an email address in the normal format (e.g., `user@domain.com`).
-
 2. **Email Conversion**:
-   - The email is automatically converted into a Firebase-friendly format (e.g., `user-at-domain-dot-com`).
-
 3. **Firebase Query**:
-   - The app queries Firebase to check if data for that email exists. If found, the data is fetched.
-
 4. **Data Display**:
-   - If data exists for the email, it is displayed in a neatly formatted table.
-   - If no data exists, an error message is displayed to the user.
-
 ---
 
-## Technologies Used
-
-- **React**: For building the user interface and handling user input.
-- **Firebase Realtime Database**: For storing and retrieving data in the cloud.
-- **HTML/CSS**: For basic page structure and styling.
-
----
-
-## How to Run the Project
-
-1. Clone this repository.
-2. Install the necessary dependencies by running:
-   ```bash
-   npm install
+## Video Demonstration: 
