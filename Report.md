@@ -77,10 +77,10 @@ We also used **HTML** and **CSS** for basic website and data table styling.
 
 ## Application Workflow
 
-1. **User Enters Email Address**:
-2. **Email Conversion**:
-3. **Firebase Query**:
-4. **Data Display**:
+1. **User Enters Email Address**
+2. **Email Conversion**
+3. **Firebase Query**
+4. **Data Display**
 ---
 
 ## Video Demonstration for Exercise 3: 
