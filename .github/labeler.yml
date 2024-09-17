@@ -1,0 +1,24 @@
+# .github/labeler.yml
+
+# Label for frontend changes
+frontend:
+  - 'src/**'       # Any file changes in the 'src' folder (your frontend)
+
+# Label for backend changes
+backend:
+  - 'assignment/**' # Any file changes in the 'assignment' folder (your backend)
+
+# Label for documentation changes (if any .md files are added/modified)
+documentation:
+  - '**/*.md'      # Any changes to Markdown files
+
+# Label for configuration changes (like firebase.js or index.js)
+config:
+  - 'firebase.js'  # Changes to Firebase configuration file
+  - 'index.js'     # Changes to index.js file
+  - '*.yml'        # Any changes to YAML configuration files
+  - '.github/workflows/**'  # Any changes to workflow files in .github/workflows
+
+# Label for tests (if you have a test folder, you can add more here)
+tests:
+  - 'tests/**'     # Any file changes in a 'tests' directory (if you have one)
