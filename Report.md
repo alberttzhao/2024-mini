@@ -38,10 +38,13 @@ The project consists of the following main components:
 - The user interface includes an input field where users can enter an email address in a normal format (e.g., `user@domain.com`).
 - When the form is submitted, a function converts the email into a format compatible with Firebase (e.g., `user-at-domain-dot-com`) and fetches the data associated with that email from the Firebase Realtime Database.
 
+
 #### Data Display Table:
 
 - If data exists for the given email, it is formatted and displayed in a clean table with specific columns: **ID**, **Avg Response Time**, **Max Response Time**, **Min Response Time**, **Misses**, and **Score**.
 - If no data exists, a message is displayed to inform the user that no information is available for the given email.
+<img width="1511" alt="IMG_4254" src="https://github.com/user-attachments/assets/29de5c5e-e82c-40cd-91c5-e8b2e3c88837">
+
 
 ### React Components and Hooks
 
